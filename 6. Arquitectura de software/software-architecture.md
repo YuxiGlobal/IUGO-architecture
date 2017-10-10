@@ -13,7 +13,7 @@
 2. **Cross-Cutting Concerns:**
     Son todos los componentes utilizados transversalmente por la aplicación y no hacen parte del negocio.
 
-    * Notifications : Proxy del servivicio de notificaciones de Yuxi, su principal tarea es el registro de templates y envío de notificaciones de IUGO.
+    * Notifications : Proxy del servicio de notificaciones de Yuxi, su principal tarea es el registro de templates y envío de notificaciones de IUGO.
 
     * Security: Proxy del servicio de seguridad de Yuxi, su principal tarea es el registro de usuarios y claims de IUGO:
 
