@@ -24,18 +24,21 @@
 3. **Administration:**
     Son los componentes utilizados para la creación de maestros de la aplicación.
 
-    * Company : Componente relacionado con las empresas de transporte.
+    * [Company] : Componente relacionado con las empresas de transporte.
     * Transportation Assets : Componente relacionado con los activos de una empresa de transporte  : vehículos, conductores, accesorios...
-    * Lists : Componente con los maestros para listas comunes como :  regiones, departamentos, ciudades...
+    * [Lists] : Componente con los maestros para listas comunes como :  regiones, departamentos, ciudades...
     
 4. **Transactional:**
     Son los componentes transaccionales de la aplicación.
 
     * [Turnos] : Componente encargado del enturnamiento y desenturnamiento de los activos de transportes.
 
-    * Shipping : Componente encargado de la creación de solicitudes de servicio, la asignación de los transportadores y cambio de estado de las solicitudes de servicio.
+    * [Shipping] : Componente encargado de la creación de solicitudes de servicio, la asignación de los transportadores y cambio de estado de las solicitudes de servicio.
 
     [iugo-architecture]: ./assets/IUGO-architecture.png "IUGO Architecture"
     
 
     [Turnos]: ./1.%20Turnos/turns-architecture.md
+	[Shipping]: ./2.%20Solicitudes%20de%20Servicio/README.md
+	[Lists]: ./2.%20Lists/README.md
+	[Company]: ./2.%20Company/README.md
