@@ -15,3 +15,5 @@ The **Data Access** component is implemented using Entity Framework Code First a
 The domain core functionality is inside the **Domain** layer in is accessed only by the **Services** component that provide functionality that involves the domain.
 
 In Azure there is a web job that triggers a service inside the **Services** layer when a dispatcher was rated. This service refreshes the company rating. 
+
+[company-architecture]: ./assets/company-architecture.png "company architecture"

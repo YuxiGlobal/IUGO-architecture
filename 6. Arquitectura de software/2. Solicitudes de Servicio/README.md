@@ -40,4 +40,10 @@ ________________________________
 
 
 ## Software architecture
- ![Cancelar][shipping general architecture]
+ ![Arquitectura del modulo][shipping-general-architecture]
+
+[sequence-shipping-request]: ./assets/sequence-shipping-request.png "Secuencia solicitud de servicio"
+
+[sequence-change-status]: ./assets/sequence-change-status.png "Secuencia cambiar estado carga"
+
+[shipping-general-architecture]: ./assets/shipping-general-architecture.png "Arquitectura del modulo"

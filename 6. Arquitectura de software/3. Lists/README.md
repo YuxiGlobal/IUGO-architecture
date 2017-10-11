@@ -11,3 +11,6 @@ Uses the **IUGO Security** component that validates that a specific user is in a
 It has a **Data Access** component that is implemented using Entity Framework Code First and saves data into an **Azure SQL Server Database**.
 
 ![list architecture][list-architecture]
+
+
+[list-architecture]: ./assets/list-architecture.png "list architecture"
