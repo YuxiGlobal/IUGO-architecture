@@ -40,5 +40,5 @@
 
     [Turnos]: ./1.%20Turnos/turns-architecture.md
 	[Shipping]: ./2.%20Solicitudes%20de%20Servicio/README.md
-	[Lists]: ./2.%20Lists/README.md
-	[Company]: ./2.%20Company/README.md
+	[Lists]: ./3.%20Lists/README.md
+	[Company]: ./4.%20Company/README.md
