@@ -15,7 +15,7 @@
 
     * Notifications : Proxy del servicio de notificaciones de Yuxi, su principal tarea es el registro de templates y envío de notificaciones de IUGO.
 
-    * Security: Proxy del servicio de seguridad de Yuxi, su principal tarea es el registro de usuarios y claims de IUGO:
+    * Security: Servicio de seguridad de Yuxi, su principal tarea es el registro de usuarios y creación de claims de IUGO:
 
     * Rating: Proxy del servicio de rating de Yuxi, su principal tarea es al creación de las encuestas y almacenamiento de las respuestas a ellos.
 
