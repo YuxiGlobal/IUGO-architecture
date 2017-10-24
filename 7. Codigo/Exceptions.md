@@ -5,8 +5,48 @@ https://docs.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-e
 
 A continuación se definen algunos guidelines lo cuales serán aplicados en cada uno de los proyectos:
 
-1. **Prevenir excepciones:** Las excepciones deben ser manejadas de manera preventiva, por ejemplo, si se requiere una conversión a número de un string es preferible utilizar `Int32.TryParse`.
-1. **Propagación de excepciones:** A no ser de que se desee hacer una validación de negocio o una traducción de una excepción presentada, se recomienda dejar que las excepciones se progaguen hasta la capa de protocolo, donde se tendrá un filtro para centralizar el manejo de las excepciones.
+## Prevenir excepciones
+
+Las excepciones deben ser manejadas de manera preventiva, por ejemplo, si se requiere una conversión a número de un string es preferible utilizar `Int32.TryParse`.
+
+## Propagación de excepciones
+
+A no ser de que se desee hacer una validación de negocio o una traducción de una excepción presentada, se recomienda dejar que las excepciones se progaguen hasta la capa de protocolo, donde se tendrá un filtro para centralizar el manejo de las excepciones.
+
+## Evitar relanzamiento de excepciones
+
+Las excepciones no deben relanzarse en escenarios normales, para evitar la pérdida de stacktrace e información necesaria de la excepción, a no ser de que se vaya a hacer un tratamiendo específico de la excepción como Log, tranducción a Excepción de negocio u otro, las excepciones no se deben relanzar:
+
+Mal ejemplo:
+```c#
+
+try 
+{
+	this.repository.FindAll();
+}
+catch(Exception ex)
+{
+	throw ex;
+}
+
+```
+
+Escenario de uso:
+```c#
+
+try 
+{
+	 result = File.ReadAllLines(fileName);
+}
+catch(Exception ex)
+{
+	throw ConversionFileAccessException(filename, ex);
+}
+
+```
+
+
+Siempre que se relance una excepción se debe agregar el parámetro en el constructor `InnerException` lo que brindará más información al Manejador de excepciones que se implemente en la aplicación.
 
 ## Web Api
 
