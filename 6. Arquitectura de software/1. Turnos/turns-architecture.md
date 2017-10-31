@@ -71,11 +71,13 @@
             * Valida la seguridad con el componente *security* al realizar las operaciones.
         2. IUGO.Turns.Services. (net 4.6.2)
             * Servicio stateful que implementa los casos de uso definidos en el documento.
-        3. IUGO.Turns.Domain. (net 4.6.2)
+        3. IUGO.Turns.Services.Interfaces. (net 4.6.2)
+            * Librería que define las interfaces que expone el microservicio para ser utilizados por otros microservicios de la aplicación.
+        4. IUGO.Turns.Domain. (net 4.6.2)
             * Contiene el modelo de negocio de los turnos.
             * Define el repositorio para los turnos. (net 4.6.2)
-        4. IUGO.Turns.Infrastructure. (net 4.6.2)
-            * Contiene las implementaciones de los repositorios definidos en Domain.
+        5. IUGO.Turns.Infrastructure. (net 4.6.2)
+            * Contiene las implementaciones de los repositorios definidos en Domain con un realiable collection de service fabric.
             * Contiene la implementación para la emisión de eventos de integración.
             * Contiene la referencias a cualquier paquete externo a el componente de turnos. (EntityFramework, ServiceBus)
     2. Integration : Por cada evento escuchado se tendrá un staless services de service fabric :
