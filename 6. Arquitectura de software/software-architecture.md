@@ -1,8 +1,34 @@
 # 6. Arquitectura de software
 
  ![IUGO Architecture][iugo-architecture]
- 
-1. **Yuxi Components :**
+
+1. **General:**
+    Se utilizará azure service fabric como plataforma de desarrollo/despliegue y operación. Inicialmente se contará con dos aplicaciones corriendo bajo el mismo cluster : 
+    
+    * sf:IUGO 
+    * sf:Yuxi
+
+    La primera tendrá los microservicios encargados de realizar las operaciones de IUGO y la segunda tendrá los microservicios genéricos para todas las aplicaciones de Yuxi.
+
+    La comunicación entre microservicios transaccionales deberá hacerse de manera asícrona, es decir utilizando el EventBus, y para comunicaciones con microservicios de maestros se tendrá la posibilidad de realizar un llamado sícrono (Http-rest).
+
+    * Comunicaciones asícronas : 
+        * Turn 
+        * Shipping
+        * Notifications
+    * Comunicaciones sícronas : 
+        * Company
+        * Transportation Assets
+        * Lists
+        * Security
+
+    Para las comunicaciones sícronas se deberá exponer una capa "Interfaces" con las interfaces de los servicios y modelos que el microservicio utiliza, está capa no deberá tener ningún tipo de lógica.
+
+    Se podrá utilizar el siguiente proyecto a manera de ejemplo :
+
+    [Service Fabric POC]( https://github.com/p1p3/azure-service-fabric-example)
+   
+2. **Yuxi Components:**
      Son los componentes genéricos que Yuxi posee para el desarrollo de sus aplicaciones.
 
      * Notifications : Servicio multitenant de notificaciones de email, sms y push notifications.
@@ -10,7 +36,7 @@
      * Rating: Servicio multitenant de rating, permite calificar diferentes actores de una aplicación.
      * Assets: Servicio multitenant de assets, permite almacenar assets en azure y disco, es extensible para utilizar cualquier tipo de almacenamiento.
 
-2. **Cross-Cutting Concerns:**
+3. **Cross-Cutting Concerns:**
     Son todos los componentes utilizados transversalmente por la aplicación y no hacen parte del negocio.
 
     * Notifications : Proxy del servicio de notificaciones de Yuxi, su principal tarea es el registro de templates y envío de notificaciones de IUGO.
@@ -21,14 +47,14 @@
 
     * Service Bus: Permite la comunicación asíncrona entre microservicios de la aplicación.
 
-3. **Administration:**
+4. **Administration:**
     Son los componentes utilizados para la creación de maestros de la aplicación.
 
     * [Company] : Componente relacionado con las empresas de transporte.
     * Transportation Assets : Componente relacionado con los activos de una empresa de transporte  : vehículos, conductores, accesorios...
     * [Lists] : Componente con los maestros para listas comunes como :  regiones, departamentos, ciudades...
     
-4. **Transactional:**
+5. **Transactional:**
     Son los componentes transaccionales de la aplicación.
 
     * [Turnos] : Componente encargado del enturnamiento y desenturnamiento de los activos de transportes.

@@ -60,7 +60,7 @@
         * Enturnar
         * Seleccionar turno
         * Cancelar turno
-    2. Listeners : Son servicios encargados de realizar la integración con eventos externos a el componente.
+    2. Integration : Son servicios encargados de realizar la integración con eventos externos a el componente.
         * Solicitud de servicio publicada.
 
 
@@ -69,18 +69,22 @@
         1. IUGO.Turns.API. (dotnet core 2.0)
             * Rutas para acceder a los recursos :
             * Valida la seguridad con el componente *security* al realizar las operaciones.
-        2. IUGO.Turns.Services. (netstandard 2.0)
-            * Tiene los servicios con la lógica para realizar los flujos mencionados.
-        3. IUGO.Turns.Domain. (netstandard 2.0)
+        2. IUGO.Turns.Services. (net 4.6.2)
+            * Servicio stateful que implementa los casos de uso definidos en el documento.
+        3. IUGO.Turns.Domain. (net 4.6.2)
             * Contiene el modelo de negocio de los turnos.
-            * Define el repositorio para los turnos. (netstandard 2.0)
-        4. IUGO.Turns.Infrastructure. (netstandard 2.0)
+            * Define el repositorio para los turnos. (net 4.6.2)
+        4. IUGO.Turns.Infrastructure. (net 4.6.2)
             * Contiene las implementaciones de los repositorios definidos en Domain.
             * Contiene la implementación para la emisión de eventos de integración.
             * Contiene la referencias a cualquier paquete externo a el componente de turnos. (EntityFramework, ServiceBus)
-    2. Listeners : Será un webjob o azure function, tendrá dos capaz :
-        1. IUGO.Turns.Listeners : Contiene la implementación necesaria para escuchar el servicebus, podrá utilizar el azure.webjobs.sdk o en caso de utilizar azure functions, sólo tendrá la recepción del mensaje.
-        2. IUGO.Turns.Listeners.Commands : Contiene la lógica necesaria para procesar los mensajes provenientes del listener, esta capa podrá hacer uso de los proyectos "IUGO.Turns.Services" y "IUGO.Turns.Infrastructure".
+    2. Integration : Por cada evento escuchado se tendrá un staless services de service fabric :
+        1. IUGO.Turns.Integrations.<IntegrationEventName> : Contiene la implementación necesaria para escuchar el servicebus y bajo el mismo proyecto una carpeta "Handlers" con los posibles handlers para dicho evento.
+
+        [IUGO.Turns.Integration.ShippingOfferAccepted](   https://github.com/p1p3/azure-service-fabric-example/tree/master/IUGO.Turns.Integration.ShippingOfferAccepted)
+
+     
+       
         
 [enturnar-routes]: ./assets/enturnar-routes.png "Enturnar"
 
