@@ -7,7 +7,7 @@ IUGO ARCHITECTURE
 4.  [Restricciones]
 5.  Principios
 6.  [Arquitectura de software]
-7.  Código
+7.  [Código]
 8.  Data
 9.  Arquitectura de infraestructura
 10. Despliegue
@@ -21,3 +21,4 @@ IUGO ARCHITECTURE
 [Atributos de calidad]: ./3.%20Atributos%20calidad/quality-attributes.md
 [Restricciones]: ./4.%20Restricciones/constraints.md
 [Arquitectura de software]: ./6.%20Arquitectura%20de%20software/software-architecture.md
+[Código]: ./7.%20Codigo/README.md
