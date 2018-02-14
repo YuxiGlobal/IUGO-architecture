@@ -61,6 +61,11 @@
 
     * [Shipping] : Componente encargado de la creación de solicitudes de servicio, la asignación de los transportadores y cambio de estado de las solicitudes de servicio.
 
+5. **Despliegue:**
+    La aplicación cuenta con un flujo de integración y despliegue continuo, para realizar un despliegue en QA es necesario hacer un merge en la rama de **development** , en el caso de Producción es necesario realizar un merge a la rama **master**. 
+
+    * [Deployment] : Diagrama del despliegue de la aplicación.
+
     [iugo-architecture]: ./assets/IUGO-architecture.png "IUGO Architecture"
     
 
@@ -68,3 +73,4 @@
 	[Shipping]: ./2.%20Solicitudes%20de%20Servicio/README.md
 	[Lists]: ./3.%20Lists/README.md
 	[Company]: ./4.%20Company/README.md
+    [Deployment]: ./7.%20Deployment%20Diagrams/README.md
