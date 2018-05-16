@@ -30,10 +30,10 @@ A continuación se describen los flujos de la aplicación y la arquitectura a ni
 * El usuario ha ingresado tiene asignado un 'Paquete' o 'Servicio'
 
 #### Descripción:
-1. **Conductor** Está en la aplicación móvil y como se encuentra en *proceso de transporte de paquete* se le mostrarán algunos botones para cambiar los estados de la carga, el primero, que es antes de recoger la carga mostrará `RECOGIDA`.
+1. **Conductor** Está en la aplicación móvil y como se encuentra en *proceso de transporte de paquete* se le mostrarán algunos botones para cambiar los estados de la carga, el primero, que es antes de recoger la carga mostrará `RECOGIDA`. 
 2. **App Mobil** enviará una petición al Shipping API notificando el nuevo estado, en este caso sería `cargaRecogida`.
 3. Para todos los estados se seguirá el mismo proceso de los pasos 1 y 2.
-4. En caso de que el **Conductor** notifique que el estado de la carga es `Entregado` el *Shipping API* emitirá un evento `Package delivered` que será escuchado por el WebJob de Rating y generará las encuentras asociadas a este proceso para los actores involucrados.
+4. En caso de que el **Conductor** notifique que el estado de la carga es `Entregado` el *Shipping API* emitirá un evento `Package delivered` que será escuchado por el MicroServicio de Rating y generará las encuentras asociadas a este proceso para los actores involucrados.
 
 ________________________________
 
