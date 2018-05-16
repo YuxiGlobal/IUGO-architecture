@@ -32,5 +32,5 @@ Este contexto tendrá múltiples etapas de desarrollo, cada una de ellas se desc
   * Yuxi Assets: Servicio RESTfull que almacena información sobre assets, tales como imágenes, videos y archivos en general
   * Yuxi Security: Es el **Identity Server** que validará cada petición, en forma síncrona, que se hace en la capa de API
 
-* 
+
 [imagen-arquitectura-contexto]: ./assets/Transport%20Assets%20Architecture.jpg "Arquitectura de este contexto"
