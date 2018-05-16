@@ -6,6 +6,7 @@ Este contexto tendrá múltiples etapas de desarrollo, cada una de ellas se desc
 2. ETL :  No realizaremos validaciones, sino que, por medio de cargas de ETL, tomaremos como verdad lo que vengan en dichos archivos y se realizará de manera automática.
 3. Las entidades podrán ser administrables desde la aplicación.
 
+![Transportation Assets][imagen-arquitectura-contexto]
 
 ## Capas de la arquitectura:
 * **IUGO.TransportationAssets.API**
