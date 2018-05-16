@@ -50,7 +50,6 @@
 4. **Administration:**
     Son los componentes utilizados para la creación de maestros de la aplicación.
 
-    * [Company] : Componente relacionado con las empresas de transporte.
     * Transportation Assets : Componente relacionado con los activos de una empresa de transporte  : vehículos, conductores, accesorios...
     * [Lists] : Componente con los maestros para listas comunes como :  regiones, departamentos, ciudades...
     
