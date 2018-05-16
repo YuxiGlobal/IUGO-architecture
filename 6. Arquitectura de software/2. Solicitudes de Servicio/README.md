@@ -15,7 +15,7 @@ A continuación se describen los flujos de la aplicación y la arquitectura a ni
 1. **Despachador** ingresa la información de la solicitud de servicio, con las condiciones del camión(es) que se requieren para el transporte.
 2. **Despachador** selecciona la opción "Publicar" (Buscar candidatos/Asignar) lo cual hace la petición a el Web Api de *Shipping*.
 3. **Shipping API** emite un evento del dominio que estará escuchando el *Web Job de enturnamiento* para saber si alguno de los activos enturnados corresponden con las características de la solicitud entrante.
-4. **Turning WebJob** utiliza el Notification Proxy para enviar una notificación de *Oferta* a lo administradores de los activos que se seleccionaron en el paso anterior.
+4. **Turns.Integration** utiliza el Notification Proxy para enviar una notificación de *Oferta* a lo administradores de los activos que se seleccionaron en el paso anterior.
 5. **Administrador de flota** recibe la notificación de *Oferta* con la información del envío a realizar y el flete y la acepta en caso de esta interesado, lo cual desencadena un llamado a la **Shipping API** con el candidato interesado.
 6. **Shipping API** emite un evento del dominio con de *Canditado ha aceptado* lo cual va a permitir que un Web Socket que se encuentra publicado en el módulo de shipping emita un nuevo mensaje con el nuevo candidato.
 7. **FrontEnd** va a estar subscrito a todos los eventos lanzados por el **WebSocket** mostrando la información de los candidatos que llegan de acuerdo a la respuesta de **Turning Service**
@@ -34,7 +34,6 @@ A continuación se describen los flujos de la aplicación y la arquitectura a ni
 2. **App Mobil** enviará una petición al Shipping API notificando el nuevo estado, en este caso sería `cargaRecogida`.
 3. Para todos los estados se seguirá el mismo proceso de los pasos 1 y 2.
 4. En caso de que el **Conductor** notifique que el estado de la carga es `Entregado` el *Shipping API* emitirá un evento `Package delivered` que será escuchado por el WebJob de Rating y generará las encuentras asociadas a este proceso para los actores involucrados.
-
 
 ________________________________
 
